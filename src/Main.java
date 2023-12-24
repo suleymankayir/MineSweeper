@@ -10,9 +10,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean isValid = false;
         while (!isValid) {
-            System.out.print("Olusturulacak Satır : ");
+            System.out.print("Row To Create : ");
             int row = scanner.nextInt();
-            System.out.print("Olusturulacak Sütun : ");
+            System.out.print("Column To Create : ");
             int column = scanner.nextInt();
 
             if (row > 2 && column > 2) {
@@ -20,7 +20,7 @@ public class Main {
                 mineSweeper.run();
                 break;
             } else {
-                System.out.println("Gecersiz satır/sütun girisi yaptınız");
+                System.out.println("Invalid row/column input!");
             }
         }
 

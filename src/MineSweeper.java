@@ -49,7 +49,7 @@ public class MineSweeper { // Degerlendirme Formu 5
 
         }
         // Display the initial state of the game board with mines
-        System.out.println("MAYINLARIN KONUMU");
+        System.out.println("LOCATION OF MINES");
         for (int i = 0; i < this.row; i++) {
             String map = (Arrays.toString(arr[i]));
             map = map.replace(",", "");
@@ -71,28 +71,28 @@ public class MineSweeper { // Degerlendirme Formu 5
             // Get user input for row and column
             // Degerlendirme formu 9
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Satır giriniz : ");
+            System.out.print("Enter row : ");
             int userRow = scanner.nextInt();
-            System.out.print("Sütun giriniz : ");
+            System.out.print("Enter column : ");
             int userColumn = scanner.nextInt();
 
             // Validate user input
             // Degerlendirme formu 10
             if (userRow < 0 || userRow > this.row - 1) {
-                System.out.println("Lütfen gecerli bir satir giriniz!");
+                System.out.println("Please enter a valid row!");
                 continue;
             } else if (userColumn < 0 || userColumn > this.column - 1) {
-                System.out.println("Lütfen gecerli bir sütun giriniz!");
+                System.out.println("Please enter a valid column!");
                 continue;
             }
             // Check if the selected cell is an empty cell
-            if (arr[userRow][userColumn].equals("-") && arr2[userRow][userColumn].equals("-")) { // arr2 tekrar konulmaması icin
+            if (arr[userRow][userColumn].equals("-") && arr2[userRow][userColumn].equals("-")) { //
                 // Check adjacent cells for mines and update touchedCount
                 // The first four are for the corners, and the rest are for the edges excluding the corners.
                 if ((userRow == this.row - 1 && userColumn == 0)) {
                     for (int i = userRow - 1; i <= userRow; i++) {
                         for (int j = userColumn; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -100,7 +100,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if ((userRow == 0 && userColumn == this.column - 1)) {
                     for (int i = userRow; i <= userRow + 1; i++) {
                         for (int j = userColumn - 1; j <= userColumn; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -108,7 +108,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if ((userRow == 0 && userColumn == 0)) {
                     for (int i = userRow; i <= userRow + 1; i++) {
                         for (int j = userColumn; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -116,7 +116,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if ((userRow == row - 1 && userColumn == column - 1)) {
                     for (int i = userRow - 1; i <= userRow; i++) {
                         for (int j = userColumn - 1; j <= userColumn; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -124,7 +124,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if (userRow == 0) {
                     for (int i = userRow; i <= userRow + 1; i++) {
                         for (int j = userColumn - 1; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -132,7 +132,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if (userRow == this.row - 1) {
                     for (int i = userRow - 1; i <= userRow; i++) {
                         for (int j = userColumn - 1; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
 
                             }
@@ -141,7 +141,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if (userColumn == 0) {
                     for (int i = userRow - 1; i <= userRow + 1; i++) {
                         for (int j = userColumn; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -149,7 +149,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else if (userColumn == this.column - 1) {
                     for (int i = userRow - 1; i <= userRow; i++) {
                         for (int j = userColumn - 1; j <= userColumn; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
                             }
                         }
@@ -157,7 +157,7 @@ public class MineSweeper { // Degerlendirme Formu 5
                 } else {
                     for (int i = userRow - 1; i <= userRow + 1; i++) {
                         for (int j = userColumn - 1; j <= userColumn + 1; j++) {
-                            if (!arr[userRow][userColumn].equals(arr[i][j])) { // mayın sayısı tespit etme
+                            if (!arr[userRow][userColumn].equals(arr[i][j])) {
                                 touchedCount++;
 
                             }
@@ -173,7 +173,8 @@ public class MineSweeper { // Degerlendirme Formu 5
             } else if (!arr2[userRow][userColumn].equals("-")) {
                 // User selected a cell that has already been chosen, provide feedback
                 emptySpace--;
-                System.out.println("Lütfen farklı bir kare seçiniz.\nBu kare daha önce seçildi.");
+                System.out.println("Please select a different location.\n" +
+                        "This location has already been selected.");
                 continue;
             }
 
